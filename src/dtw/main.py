@@ -9,8 +9,6 @@ cryptory_from_date = Cryptory(from_date="2019-01-01")
 
 history_price_btc = cryptory_from_date.extract_coinmarketcap("bitcoin").sort_values(by=['date'])
 
-head_shoulders = HeadAndShoulders()
-
 list_of_dates = list(history_price_btc['date'])
 list_of_closes = list(history_price_btc['close'])
 
@@ -24,8 +22,8 @@ patterns = [
 
 calculations = []
 
-for i, value in enumerate(patterns):
-    len_template = len(value.get_pattern())
+for i, pattern in enumerate(patterns):
+    len_template = len(pattern.get_pattern())
 
     window_size = len_template
     while window_size < len_list_of_closes:
@@ -41,18 +39,18 @@ for i, value in enumerate(patterns):
                                in
                                window]
 
-            minimum_value_pattern, maximum_value_pattern = value.get_min_max()
+            minimum_value_pattern, maximum_value_pattern = pattern.get_min_max()
 
             denormalized_data_template = [
                 denormalize(normalized_close_price, minimum_value_pattern, maximum_value_pattern)
                 for
                 normalized_close_price in normalized_data]
 
-            distance, path = fastdtw(denormalized_data_template, head_shoulders.get_pattern())
+            distance, path = fastdtw(denormalized_data_template, pattern.get_pattern())
 
             calculations.append(
                 {
-                    "pattern": value.__class__.__name__,
+                    "pattern": pattern.__class__.__name__,
                     "start_window": start_window,
                     "start_date": list_of_dates[start_window],
                     "end_window": end_window,
