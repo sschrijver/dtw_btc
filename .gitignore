@@ -1,2 +1,4 @@
 .idea
 **.pyc
+src/dtw.egg-info**
+

@@ -3,9 +3,15 @@ name = "dtw"
 version = "0.1.0"
 description = ""
 authors = [" Stephan Schrijver <stephanschrijver@gmail.com>"]
+packages = [
+    {include = "dtw", from = "src"}
+]
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.6.1"
+cryptory = { git = "https://github.com/sschrijver/cryptory.git", branch = "master" }
+fastdtw = "0.3.4"
+pandas = "1.0.3"
 
 [tool.poetry.dev-dependencies]
 
