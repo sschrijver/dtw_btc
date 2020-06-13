@@ -36,5 +36,5 @@ poetry install
 ```
 
 ```
-poetry run python src/dtw/main.py
+poetry run python src/dtw_btc/main.py
 ```

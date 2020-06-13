@@ -7,9 +7,17 @@ def denormalize(normalized, min, max):
     denormalized = (normalized * (max - min) + min)
     return denormalized
 
+
 def normalize_function_paper(value,
                              min_time_window,
                              max_time_window,
                              min_template,
                              max_template):
-    return min_template +((value-min_time_window)* (max_template - min_template)/(max_time_window-min_time_window))
+    try:
+        return min_template + ((value - min_time_window) * (max_template - min_template) / (
+                max_time_window - min_time_window))
+    except ZeroDivisionError:
+        # Makes no sense, return 0
+        return 0
+
+
