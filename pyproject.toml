@@ -4,14 +4,16 @@ version = "0.1.0"
 description = ""
 authors = [" Stephan Schrijver <stephanschrijver@gmail.com>"]
 packages = [
-    {include = "dtw", from = "src"}
+    {include = "dtw_btc", from = "src"}
 ]
 
 [tool.poetry.dependencies]
 python = "^3.6.1"
 cryptory = { git = "https://github.com/sschrijver/cryptory.git", branch = "master" }
-fastdtw = "0.3.4"
 pandas = "1.0.3"
+joblib = "0.15.1"
+matplotlib = "3.2.1"
+dtaidistance = "1.2.3"
 
 [tool.poetry.dev-dependencies]
 

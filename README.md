@@ -1,13 +1,9 @@
 # Dynamic Time Warping (DTW) on close prices BTC
 
 Based on: Pattern Extraction in Stock Market data by Suresh Rajagopal  
-Link: cs.uccs.edu/~jkalita/work/StudentResearch/RajagopalSureshMSProject2016.pdf
+Link: [cs.uccs.edu/~jkalita/work/StudentResearch/RajagopalSureshMSProject2016.pdf](cs.uccs.edu/~jkalita/work/StudentResearch/RajagopalSureshMSProject2016.pdf)
 
-Should definitely be revisited! Current included patterns:  
-
-- Head and Shoulders
-- Head and Shoulders Reversed/Inversed
-- Triple Top Rectangle
+Patterns should definitely be revisited (because I'm not into trading/TA!
 
 ## Output (create a data folder inside the project root folder):
 
